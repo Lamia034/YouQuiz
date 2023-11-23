@@ -14,12 +14,12 @@ import java.util.List;
 //@Setter
 public class Answer {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
    // @Column(name = "answer_id")
     private Long answer_id;
     private String text;
 
-    @OneToMany(mappedBy = "answer", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "answer", fetch = FetchType.EAGER)     //immediate without req
     private List<Point> points;
 
 }

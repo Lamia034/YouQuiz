@@ -12,13 +12,15 @@ import java.util.List;
 @Data
 @Entity
 @Inheritance
+//@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Formator extends Person{
 
     @Id
     @GeneratedValue
-    private Long person_id;
-    @NonNull
-    private String specialty;
-    @OneToMany(mappedBy = "formator")
+    private Long formator_id;
+
+    private String speciality;
+    @OneToMany(mappedBy = "formator", fetch = FetchType.EAGER)
     private List<Quiz> quizs;
 }

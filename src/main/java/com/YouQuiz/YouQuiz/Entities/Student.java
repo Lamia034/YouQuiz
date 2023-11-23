@@ -1,6 +1,7 @@
 package com.YouQuiz.YouQuiz.Entities;
 
     
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -14,13 +15,14 @@ import java.util.List;
 @Data
 @Entity
 @Inheritance
+//@Inheritance(strategy = InheritanceType.JOINED)
 public class Student extends Person{
+
     @Id
     @GeneratedValue
     private Long student_id;
-    @NonNull
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate registrationDate;
     @OneToMany(mappedBy = "student")
     private List<AssignQuiz> assignQuizs;
-
 }

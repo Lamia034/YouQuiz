@@ -1,5 +1,7 @@
 package com.YouQuiz.YouQuiz.Entities;
 
+import com.YouQuiz.YouQuiz.Enum.MediaType;
+import com.YouQuiz.YouQuiz.Enum.QuestionType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Question {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long question_id;
     private String text;
     @ManyToOne(fetch = FetchType.EAGER)
@@ -26,10 +28,14 @@ public class Question {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="level_id")
     private Level level;
+
+    @Enumerated(EnumType.STRING)
+    private QuestionType question_type;
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
     private List<Point> points;
 
     @OneToMany(mappedBy = "question", fetch = FetchType.EAGER)
+ //   @ManyToMany(fetch = FetchType.EAGER)
     private List<Media> medias;
     @ManyToMany(fetch = FetchType.EAGER)
             //(mappedBy = "questions")

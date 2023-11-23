@@ -16,14 +16,14 @@ public class Point {
     @GeneratedValue
     private Long point_id;
     private Integer point;
-    @ManyToOne
-    @JoinColumn(name = "question_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "question_id", referencedColumnName = "question_id")
     private Question question;
 
-    @ManyToOne
-    @JoinColumn(name = "answer_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "answer_id", referencedColumnName = "answer_id")
     private Answer answer;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
          //   (mappedBy = "points")
     private List<AssignQuiz> assignQuizs;
 }
