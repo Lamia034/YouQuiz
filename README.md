@@ -162,3 +162,19 @@ GET http://localhost:8080/subjects
     }
 
 ]
+
+## API Request
+POST http://localhost:8080/subjects
+Content-Type: application/json
+
+{
+  "title": "spanish",
+  "parent_id": 402
+}
+
+## API Response
+{
+    "subject_id": 652,
+    "title": "spanish",
+    "parent_id": 402
+}
