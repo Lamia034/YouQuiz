@@ -162,6 +162,7 @@ GET http://localhost:8080/subjects
     }
 
 ]
+```
 
 ## API Request
 POST http://localhost:8080/subjects
