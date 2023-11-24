@@ -166,11 +166,10 @@ GET http://localhost:8080/subjects
 ```
 ## API RequestPOST
 http://localhost:8080/subjects
-```json
-[
-{  "title": "spanish",  "parent_id": 402}]
-```
+##Payload
+
+{  "title": "spanish",  "parent_id": 402}
+
 ## API Response
-```json
-[
-{    "subject_id": 652,    "title": "spanish",    "parent_id": 402}]
+
+{    "subject_id": 652,    "title": "spanish",    "parent_id": 402}
