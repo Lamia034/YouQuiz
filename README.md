@@ -166,10 +166,20 @@ GET http://localhost:8080/subjects
 ```
 ## API RequestPOST
 http://localhost:8080/subjects
-##Payload
+
+## Payload
 
 {  "title": "spanish",  "parent_id": 402}
 
 ## API Response
-
+```json
 {    "subject_id": 652,    "title": "spanish",    "parent_id": 402}
+
+```
+## API RequestDELETE
+http://localhost:8080/subjects/403
+
+
+## API Response
+
+Subject deleted successfully
