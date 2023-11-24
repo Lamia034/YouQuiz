@@ -166,6 +166,11 @@ GET http://localhost:8080/subjects
 ```
 ## API RequestPOST
 http://localhost:8080/subjects
-Content-Type: application/json{  "title": "spanish",  "parent_id": 402}
-## API Responsejson
-{    "subject_id": 652,    "title": "spanish",    "parent_id": 402}
+```json
+[
+{  "title": "spanish",  "parent_id": 402}]
+```
+## API Response
+```json
+[
+{    "subject_id": 652,    "title": "spanish",    "parent_id": 402}]
