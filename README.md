@@ -168,8 +168,9 @@ GET http://localhost:8080/subjects
 http://localhost:8080/subjects
 
 ## Payload
-
+```json
 {  "title": "spanish",  "parent_id": 402}
+```
 
 ## API Response
 ```json
@@ -183,3 +184,24 @@ http://localhost:8080/subjects/403
 ## API Response
 
 Subject deleted successfully
+
+## API RequestPUT
+http://localhost:8080/subjects/302
+
+## Payload
+```json
+{
+  "title":"arabiccc ",
+  "parent_id":null
+
+    }
+```
+## API Response
+```json
+{
+    "subject_id": 302,
+    "title": "arabiccc ",
+    "parent": null,
+    "children": []
+}
+```
